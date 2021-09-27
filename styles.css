@@ -6,7 +6,30 @@
 	box-sizing: border-box;
 	font-family: sans-serif;
 }
-
+textarea {
+	border: none;
+	background-color: transparent;
+	color: #696969;
+	font-size: 20px;
+	resize: none;
+	height: 100px;
+	letter-spacing: 0.025em;
+	font-weight: 500;
+	outline:none;
+	width: 100%;
+}
+input{
+	display: none;
+	border: none;
+	color: #696969;
+	background-color: transparent;
+	padding-bottom: 1rem;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.025em;
+	width: 100%;
+	outline: none;
+}
 .languageIcons {
 	display: flex;
 	justify-content: center;
@@ -33,16 +56,7 @@
 }
 
 #noteTitle {
-	display: none;
-	border: none;
-	color: #696969;
-	background-color: transparent;
-	padding-bottom: 1rem;
-	font-size: 20px;
-	font-weight: 700;
-	letter-spacing: 0.025em;
-	width: 100%;
-	outline: none;
+	
 }
 
 #noteForm {
@@ -58,16 +72,7 @@ form {
 }
 
 #noteField {
-	border: none;
-	background-color: transparent;
-	color: #696969;
-	resize: none;
-	font-size: 20px;
-	height: 100px;
-	outline: none;
-	letter-spacing: 0.025em;
-	font-weight: 500;
-	width: 100%;
+
 }
 
 #noteArea {
@@ -99,10 +104,11 @@ form {
 	display: flex;
 	font-weight: 600;
 	padding-bottom: 1rem;
+	pointer-events: none;
 }
 
 .parentNote .first i {
-	cursor: pointer;
+	pointer-events: auto;
 	font-size: 1.5rem;
 	opacity: 0;
 	transition: 0.3s;
@@ -115,7 +121,10 @@ form {
 .parentNote .first div:nth-child(1) {
 	flex: 1;
 }
-
+.parentNote .iconParent {
+	cursor:pointer;
+	pointer-events: auto;
+}
 .parentNote .second {
 	font-weight: 300;
 	pointer-events: none;
@@ -136,11 +145,14 @@ form {
 	height: 40px;
 }
 
+/* Part off a dynamic modal , when icon is clicked*/
+
 .modal {
 	position: fixed; /* Stay in place */
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
 	padding-left:2rem;
@@ -157,5 +169,31 @@ form {
 .childModal {
 	background:white;
 	width: 100%;
-	padding:2rem;
+	padding-top:1rem;
+	padding-left:1rem;
+	padding-right:1rem;
+	padding-bottom:2rem;
+}
+
+.modalNoteTitle {
+	color:black;
+	display:block;
+	padding-bottom: 1rem;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.025em;
+	width: 100%;
+}
+.modalNoteDescription {
+	color:black;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 0.025em;
+	height:50px;
+	width: 100%;
+}
+
+.modalFooter {
+	display:flex;
+	justify-content: space-between;
 }
