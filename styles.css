@@ -1,0 +1,139 @@
+
+
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.languageIcons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 2rem;
+}
+
+.languageIcons div {
+	padding-top: 2rem;
+	margin-right: 2rem;
+}
+
+
+/*backdrop is the overlay that will be used as a venue to escape the textfield completely without specifying any targets*/
+
+#backDrop {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9;
+}
+
+#noteTitle {
+	display: none;
+	border: none;
+	color: #696969;
+	background-color: transparent;
+	padding-bottom: 1rem;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.025em;
+	width: 100%;
+	outline: none;
+}
+
+#noteForm {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+form {
+	border-radius: 0.5rem;
+	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+	text-align: center;
+	padding: 1rem;
+}
+
+#noteField {
+	border: none;
+	background-color: transparent;
+	color: #696969;
+	resize: none;
+	font-size: 20px;
+	height: 100px;
+	outline: none;
+	letter-spacing: 0.025em;
+	font-weight: 500;
+	width: 100%;
+}
+
+#noteArea {
+	margin-top: 3rem;
+	padding: 2rem;
+}
+
+.showNoteTitle {
+	display: block;
+}
+
+.parentNote {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	height: auto;
+	transition: 0.3s;
+	width: 100%;
+	word-break: break-all;
+}
+
+.parentNote:hover {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.parentNote .first {
+	display: flex;
+	font-weight: 600;
+	padding-bottom: 1rem;
+	pointer-events: none;
+}
+
+.parentNote .first i {
+	cursor: pointer;
+	font-size: 1.5rem;
+	opacity: 0;
+	transition: 0.3s;
+}
+
+.parentNote:hover i {
+	opacity: 1;
+}
+
+.parentNote .first div:nth-child(1) {
+	flex: 1;
+}
+
+.parentNote .second {
+	font-weight: 300;
+	pointer-events: none;
+}
+
+#submitButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	cursor: pointer;
+	background: #42b883;
+	border-radius: 9999px;
+	position: relative;
+	bottom: 10;
+	right: 0;
+	width: 40px;
+	height: 40px;
+}
+
