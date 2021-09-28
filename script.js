@@ -80,7 +80,7 @@ function createModal(type,firstClass,title,noteDescription){
   footerSection.classList.add('modalFooter');
 
   let footerChildOne = document.createElement(type);
-  footerChildOne.classList.add('fas','fa-trash');
+  footerChildOne.classList.add('far','fa-trash-alt');
   let footerChildtwo = document.createElement(type);
   let footerButton = document.createElement('button')
   footerButton.classList.add('footerButton')
