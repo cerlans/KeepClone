@@ -23,15 +23,27 @@ submitButton.addEventListener('click',()=>{
 })
 //Parent of all the notes that will be added
 noteArea.addEventListener('click',(event)=>{
-
   if(event.target.className === 'parentNote'){
+    let parentElement = event.target;
+    console.log(parentElement)
     let dynamicTitle = event.target.children[0].innerText;
     let dynamicNoteDescription = event.target.children[1].innerText;
-    createModal('div','modal',dynamicTitle,dynamicNoteDescription)
+    createModal('div','modal',dynamicTitle,dynamicNoteDescription,parentElement)
   }
 })
+
 //bchiang creates a 'backdrop' sort off like the modal from w3 schools that acts as the anchor to close the text field when its clicked out 
 // this backdrop overlays the entire page, bar the input area
+
+/*
+window.onclick = function(event) {
+  if (event.target != noteField  || noteTitle) {
+    noteTitle.style.display='none'
+    console.log('homo')
+    console.log(event.target)
+  }
+} 
+*/
 
 function createNote(noteText,noteTitle){
   const parentDiv = document.createElement('div');
@@ -60,19 +72,27 @@ function reset (){
   noteTitle.value=''
 }
 
-function createModal(type,firstClass,title,noteDescription){
+function createModal(type,firstClass,title,noteDescription,parentNote){
   //div in this case
   //is there a faster way to specify i want 3 divs created?
   let hiddenModal= document.createElement(type);
-
+  hiddenModal.addEventListener('click',(event)=>{
+    if(event.target.className === 'far fa-trash-alt'){
+      alert('are you sure you want to delete this note?')
+      hiddenModal.remove();
+      parentNote.remove()
+    }         
+  })
   let childModal = document.createElement(type);
   childModal.classList.add('childModal');
 
   let firstChild = document.createElement('input');
   firstChild.classList.add('modalNoteTitle');
+  firstChild.placeholder = 'Title '
   firstChild.value = title
 
   let secondChild = document.createElement('textarea');
+  secondChild.placeholder='Take A Note...'
   secondChild.classList.add('modalNoteDescription')
   secondChild.innerText = noteDescription
 
@@ -96,5 +116,5 @@ function createModal(type,firstClass,title,noteDescription){
   childModal.append(footerSection);
 
   hiddenModal.classList.add(firstClass)
-  document.body.append(hiddenModal)
+  parentNote.append(hiddenModal)
   }

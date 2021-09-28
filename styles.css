@@ -159,6 +159,8 @@ form {
 	flex-direction: column;
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
+	padding-left:1rem;
+	padding-right:1rem;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -202,11 +204,18 @@ form {
 	align-items: center;
 	justify-content: space-between;
 }
+.modalFooter div {
+	cursor:pointer;
+}
+.modalFooter i {
+	color:#C0C0C0 
+}
 
 .footerButton {
 	all:unset;
-	font-weight: 700;
-	background:#f0f0f0;
+	cursor:pointer;
+	font-weight: 500;
+	background:#C0C0C0 ;
 	border-radius: 0.375rem;
 	padding:.5rem;
 }
