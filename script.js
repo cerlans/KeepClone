@@ -3,7 +3,6 @@ noteTitle = document.getElementById('noteTitle');
 trueForm = document.getElementById('trueForm');
 submitButton = document.getElementById('submitButton');
 noteArea = document.getElementById('noteArea');
-console.log(noteTitle);
 
 
 noteField.addEventListener('focus',()=>{
@@ -17,7 +16,6 @@ noteField.addEventListener('keyup',(event)=>{
 })
 
 submitButton.addEventListener('click',()=>{
-
   createNote(noteField.value,noteTitle.value)
   reset()
 })
@@ -73,8 +71,7 @@ function reset (){
 }
 
 function createModal(type,firstClass,title,noteDescription,parentNote){
-  //div in this case
-  //is there a faster way to specify i want 3 divs created?
+
   let hiddenModal= document.createElement(type);
   hiddenModal.addEventListener('click',(event)=>{
     if(event.target.className === 'far fa-trash-alt'){
