@@ -122,8 +122,8 @@ function createmodalFooter(type, childModal, hiddenModal, parentNote) {
   footerButton.innerHTML = 'Done';
 
   footerButton.addEventListener('click', () => {
-    
-    parentNote.children[0].innerText = childModal.children[0].value;
+    console.log(parentNote)
+    parentNote.children[0].children[0].textContent= childModal.children[0].value;
     parentNote.children[1].innerText = childModal.children[1].value;
     hiddenModal.remove();
   });
@@ -134,3 +134,6 @@ function createmodalFooter(type, childModal, hiddenModal, parentNote) {
   footerSection.append(footerChildtwo);
   childModal.append(footerSection);
 }
+
+
+//click on an indivual note makes the icon go away, find out why
