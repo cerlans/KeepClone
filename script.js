@@ -4,9 +4,7 @@ trueForm = document.getElementById('trueForm');
 submitButton = document.getElementById('submitButton');
 noteArea = document.getElementById('noteArea');
 
-noteField.addEventListener('focus', () => {
-  noteTitle.style.display = 'block';
-});
+noteField.addEventListener('focus', () => { noteTitle.style.display = 'block';});
 
 noteField.addEventListener('keyup', (event) => {
   if (event.key === 'Escape') {
@@ -22,7 +20,6 @@ submitButton.addEventListener('click', () => {
 noteArea.addEventListener('click', (event) => {
   if (event.target.className === 'parentNote') {
     let parentElement = event.target;
-    console.log(parentElement);
     let dynamicTitle = event.target.children[0].innerText;
     let dynamicNoteDescription = event.target.children[1].innerText;
     createModal(
@@ -35,18 +32,6 @@ noteArea.addEventListener('click', (event) => {
   }
 });
 
-//bchiang creates a 'backdrop' sort off like the modal from w3 schools that acts as the anchor to close the text field when its clicked out
-// this backdrop overlays the entire page, bar the input area
-
-/*
-window.onclick = function(event) {
-  if (event.target != noteField  || noteTitle) {
-    noteTitle.style.display='none'
-    console.log('d')
-    console.log(event.target)
-  }
-} 
-*/
 
 function createNote(noteText, noteTitle) {
   const parentDiv = document.createElement('div');
@@ -67,7 +52,7 @@ function createNote(noteText, noteTitle) {
   noteDiv.classList.add('second');
   parentDiv.append(titleDiv);
   parentDiv.append(noteDiv);
-  noteArea.append(parentDiv);
+  noteArea.prepend(parentDiv);
 }
 
 function reset() {
@@ -109,7 +94,6 @@ function createModal(type, firstClass, title, noteDescription, parentNote) {
 }
 
 function createmodalFooter(type, childModal, hiddenModal, parentNote) {
-  console.log(parentNote)
   let footerSection = document.createElement(type);
   footerSection.classList.add('modalFooter');
 
