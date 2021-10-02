@@ -15,6 +15,7 @@ noteField.addEventListener('keyup', (event) => {
 submitButton.addEventListener('click', () => {
   createNote(noteField.value, noteTitle.value);
   reset();
+  noteTitle.style.display='none'
 });
 //Parent of all the notes that will be added
 noteArea.addEventListener('click', (event) => {

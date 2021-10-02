@@ -137,6 +137,7 @@ input{
 	cursor: pointer;
 	background: #42b883;
 	border-radius: 9999px;
+
 	position: relative;
 	bottom: 10;
 	right: 0;
@@ -169,12 +170,12 @@ input{
 .childModal {
 	background:white;
 	border-radius: 0.375rem;
-
 	width: 100%;
 	padding-top:1rem;
 	padding-left:1rem;
 	padding-right:1rem;
 	padding-bottom:2rem;
+	transition: 0.3s;
 }
 
 .modalNoteTitle {
